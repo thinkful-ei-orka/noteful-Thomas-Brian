@@ -8,6 +8,7 @@ export default function NoteList(props) {
             <Note 
                 name={note.name} 
                 key={note.id}
+                id={note.id}
                 modified={note.modified}
                 content={note.content}
                 folderid={note.folderId}

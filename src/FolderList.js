@@ -5,7 +5,7 @@ import './FolderList.css';
 export default function Folders(props) {
     let folders = props.folderList.map((folder) => {
         return (
-            <Folder name={folder.name} key={folder.id} />
+            <Folder className={folder.className} name={folder.name} key={folder.id} id={folder.id}/>
         )
     });
 

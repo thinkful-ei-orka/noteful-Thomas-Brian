@@ -1,7 +1,11 @@
 .listFolder {
-    background-color: red;
+    
     list-style: none;
     padding: 30px;
     margin: 0 auto;
     border: 1px solid black;
+}
+
+.highlighted {
+    background-color: blue;
 }
