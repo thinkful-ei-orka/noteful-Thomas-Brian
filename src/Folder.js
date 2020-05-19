@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
+import './Folder.css';
 
-
-export default function Folder() {
+export default function Folder(props) {
 
     return(
-    
-        <li className='listFolder'>Folder 1</li>
-    
+        <li className='listFolder'>{props.name}</li>
     )
 }

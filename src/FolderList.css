@@ -1,0 +1,8 @@
+.folder-list {
+    display: flex;
+    flex-flow: column;
+    border: 2xp black solid;
+    padding: 10px;
+    padding-right: 40px;
+    background-color: bisque;
+}

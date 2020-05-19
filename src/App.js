@@ -5,19 +5,22 @@ import NoteList from './NoteList';
 import './App.css';
 
 class App extends Component {
-  constructor(props){
-  super(props)
-  this.state = {
-    folders: this.props.Store.folders,
-    notes: this.props.Store.notes
-  }}
+  constructor(props) {
+    super(props)
+    this.state = {
+      folders: this.props.Store.folders,
+      notes: this.props.Store.notes
+    }
+  }
 
-  render(){
+  render() {
     return (
       <>
         <Header />
-        <FolderList folderList={this.state.folders}/>
-        <NoteList noteList={this.state.notes} />
+        <div className='list-box'>
+          <FolderList folderList={this.state.folders} />
+          <NoteList noteList={this.state.notes} />
+        </div>
       </>
     );
   }
