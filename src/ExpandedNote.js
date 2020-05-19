@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import './Note.css';
 
-export default function Note(props) {
+export default function ExpandedNote(props) {
     //id
     //name
     //modified
@@ -18,7 +18,7 @@ export default function Note(props) {
                 <p>Date modified on {modifyDate}</p>
                 <button className="delete-button">delete</button>
             </div>
-            {/* <p className="note-content" >{props.content}</p> */}
+            <p className="note-content" >{props.content}</p>
             {/*this.props.extended === true && 
                 <p className="note-content" >{props.content}</p>*/}
         </div>
