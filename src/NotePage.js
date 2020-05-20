@@ -2,35 +2,41 @@ import React from 'react';
 import FolderList from './FolderList';
 import NoteList from './NoteList';
 import Header from './Header';
+import StateContext from './StateContext'
 
-export default function NotePage(props) {
-    let folders = props.folderList.map(folder => {
- 
-        folder.className='listFolder'
-    
-    return folder;
-});
-    let folderMatch = props.routeProps.match.params.folderId;
-    let noteMatch = props.routeProps.match.params.noteId;
+export default class NotePage extends React.Component {
 
-    let note = props.noteList.filter((note) => 
-         note.id === noteMatch
-    );
+    static contextType = StateContext;
 
-    let folder = props.folderList.filter(folder => 
-        folder.id === note[0].folderId
-    );
-    
-    
+    render() {
+        this.context.folders.map(folder => {
 
-    return (
-        <>
-        <Header></Header>
+            folder.className = 'listFolder'
 
-        <div className='list-box'>
-            <FolderList folderList={folder} />
-            <NoteList noteList={note} />
-        </div>
-        </>
-    )
+            return folder;
+        });
+
+        let noteMatch = this.props.match.params.noteId;
+
+        let note = this.context.notes.filter((note) =>
+            note.id === noteMatch
+        );
+
+        let folder = this.context.folders.filter(folder =>
+            folder.id === note[0].folderId
+        );
+
+
+
+        return (
+            <>
+                <Header></Header>
+
+                <div className='list-box'>
+                    <FolderList folderList={folder} />
+                    <NoteList noteList={note} />
+                </div>
+            </>
+        )
+    }
 }

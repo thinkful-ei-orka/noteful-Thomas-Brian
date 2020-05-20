@@ -2,9 +2,10 @@ import React from 'react'
 import Note from './Note'
 import ExpandedNote from './ExpandedNote'
 
-export default function NoteList(props) {
+
+export default function NoteList (props) {
+       
     let notes = []
-    console.log(props.noteList.length)
     if (props.noteList.length === 1){
         notes = props.noteList.map((note) => {
             return (
@@ -36,7 +37,8 @@ export default function NoteList(props) {
     return (
         <section className='noteList'>
             {notes}
-            <button className='addNote' /*onClick=''*/>Add Note</button>
+            <button className='addNote' >Add Note</button>
         </section>
     )
+    
 }

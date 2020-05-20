@@ -19,8 +19,6 @@ export default function ExpandedNote(props) {
                 <button className="delete-button">delete</button>
             </div>
             <p className="note-content" >{props.content}</p>
-            {/*this.props.extended === true && 
-                <p className="note-content" >{props.content}</p>*/}
         </div>
     )
 

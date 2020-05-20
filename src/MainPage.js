@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Header from './Header';
 import FolderList from './FolderList';
 import NoteList from './NoteList';
+import StateContext from './StateContext'
 
-export default function MainPage(props) {
-    let folders = props.folderList.map(folder => {
- 
-        folder.className='listFolder'
-    
-    return folder;
-});
-    return (
-        <>
-        <Header></Header>
+export default class MainPage extends Component {
+    static contextType = StateContext;
 
-        <div className='list-box'>
-            <FolderList folderList={folders} />
-            <NoteList noteList={props.noteList} />
-        </div>
-        </>
-    )
+    render() {
+        let folders = this.context.folders.map(folder => {
+
+            folder.className = 'listFolder'
+
+            return folder;
+        });
+        return (
+            <>
+                <Header></Header>
+
+                <div className='list-box'>
+                    <FolderList folderList={folders} />
+                    <NoteList noteList={this.context.notes} />
+                </div>
+            </>
+        )
+    }
 }
-
