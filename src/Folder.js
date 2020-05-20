@@ -6,7 +6,7 @@ export default function Folder(props) {
 
     return (
         <Link to={`/folder/${props.id}`}>
-            <li className={props.className}>{props.name}</li>
+            <p className={props.className}>{props.name}</p>
         </Link>
     )
 }

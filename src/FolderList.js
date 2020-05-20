@@ -11,9 +11,7 @@ export default function Folders(props) {
 
     return (
         <section className='folder-list'>
-            <ul>
-                {folders}
-            </ul>
+            {folders}
             <button className='addFolder' /*onClick=''*/>Add Folder</button>
         </section>
     )

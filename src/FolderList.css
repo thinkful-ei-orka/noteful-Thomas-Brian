@@ -4,5 +4,12 @@
     border: 2xp black solid;
     padding: 10px;
     padding-right: 40px;
-    background-color: bisque;
+    width: 25%;
 }
+
+.addFolder{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
